@@ -14,11 +14,11 @@ class Card extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout( () => {
-            this.setState({
-                image: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png'
-            });
-        }, 5000);
+        // setTimeout( () => {
+        //     this.setState({
+        //         image: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png'
+        //     });
+        // }, 5000);
 
         this.timerID = setInterval(
             () => this.tick(),
@@ -32,7 +32,7 @@ class Card extends React.Component {
         });
     }
 
-    componentWillMount(){
+    componentWillUnmount(){
         clearInterval(this.timerID);
     }
 
@@ -45,9 +45,11 @@ class Card extends React.Component {
 
         return (
             <div className="card mx-auto Fitness-Card"
-            style={{
-                backgroundImage: `url(${circlesImg}), linear-gradient(to right, ${leftColor}, ${rightColor})`
-            }}
+                style={{
+                    backgroundImage: `url(${circlesImg}), 
+                    linear-gradient(to right, ${leftColor}, 
+                    ${rightColor})`
+                }}
             >
                 <div className="card-body">
                     <div className="row center">

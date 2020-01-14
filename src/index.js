@@ -67,6 +67,7 @@ import ReactDOM from 'react-dom';
 import Card from './components/card';
 import 'bootstrap/dist/css/bootstrap.css'
 import exerciseImg from './img/exercise.png'
+import Welcome from './components/welcome';
 
 const container = document.getElementById('root');
 const element = <Card 
@@ -90,8 +91,13 @@ const element3 = <Card
                     leftColor="#FF5733"
                     rightColor="#FFCA33"
                 />;
+const elementFunctional = <Welcome title="Hello Ad!"
+                            description="Let's workout to get some gains!"/>
 const div = (
     <div>
+        <br/>
+        <div>{elementFunctional}</div>
+        <br/>
         <div>{element}</div>
         <br/>
         <div>{element2}</div>
