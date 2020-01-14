@@ -1,19 +1,31 @@
 import React from 'react'
-import imgExample from '../img/exercise.png'
+import exerciseImg from '../img/exercise.png'
 import './styles/card.css' 
+import circlesImg from '../img/circles.png'
 
-class Card extends React.Component{
+class Card extends React.Component {
+    
     render(){
+    /* background: url('../../img/circles.png') no-repeat, linear-gradient(to right, #A74CF2, #617BFB); */
+        const props = this.props ;
+        const {
+            img, title, description, leftColor, rightColor
+        } = props;
+
         return (
-            <div className="card mx-auto Fitness-Card">
+            <div className="card mx-auto Fitness-Card"
+            style={{
+                backgroundImage: `url(${circlesImg}), linear-gradient(to right, ${leftColor}, ${rightColor})`
+            }}
+            >
                 <div className="card-body">
                     <div className="row center">
                         <div className="col-6">
-                            <img src={imgExample}/>
+                            <img src={img} className="float-right"/>
                         </div>
                         <div className="col-6 Fitness-Card-Info">
-                            <h4>Technique Guides</h4>
-                            <p>Learn amazing street workouts and calisthenics</p>
+                            <h1>{title}</h1>
+                            <p>{description}</p>
                         </div>
                     </div>
                 </div>

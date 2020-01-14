@@ -58,11 +58,44 @@
 // const container = document.getElementById('root');
 
 // ReactDOM.render(div, container);
+
+//imgUrl: https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './components/card';
+import 'bootstrap/dist/css/bootstrap.css'
+import exerciseImg from './img/exercise.png'
 
 const container = document.getElementById('root');
-const element = <Card />;
+const element = <Card 
+                    title="Technique Guides"
+                    description="Learn amazing street workouts and calisthenics"
+                    img={exerciseImg}
+                    leftColor="#A74CF2"
+                    rightColor="#617BFB"
+                />;
+const element2 = <Card 
+                    title="Technical Headlines"
+                    description="Learn amazing street workouts and calisthenics"
+                    img={exerciseImg}
+                    leftColor="#33FFA8"
+                    rightColor="#3377FF"
+                />;
+const element3 = <Card 
+                    title="General Modules"
+                    description="Learn amazing street workouts and calisthenics"
+                    img={exerciseImg}
+                    leftColor="#FF5733"
+                    rightColor="#FFCA33"
+                />;
+const div = (
+    <div>
+        <div>{element}</div>
+        <br/>
+        <div>{element2}</div>
+        <br/>
+        <div>{element3}</div>
+    </div>
+);
 
-ReactDOM.render(element, container);
+ReactDOM.render(div, container);
