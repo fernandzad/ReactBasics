@@ -19,42 +19,50 @@
 // container.appendChild(element);
 
 //Using React
-import React from 'react'
-import ReactDOM from 'react-dom'
+// import React from 'react'
+// import ReactDOM from 'react-dom'
 
-const user = {
-    firstName: 'Adrian',
-    lastName: 'Fernandez',
-    avatar: 'https://avatars.githubusercontent.com/u/59663313'
-};
+// const user = {
+//     firstName: 'Adrian',
+//     lastName: 'Fernandez',
+//     avatar: 'https://avatars.githubusercontent.com/u/59663313'
+// };
 
-function getGreeting(user){
-    if(user){
-        return <h1>Hello {getName(user)}</h1>;
-    }
-    return <h1>Hello strange!</h1>
-}
+// function getGreeting(user){
+//     if(user){
+//         return <h1>Hello {getName(user)}</h1>;
+//     }
+//     return <h1>Hello strange!</h1>
+// }
 
-function getAvatar(user){
-    let generic = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y';
-    if(user){
-        return user.avatar;
-    }
-    return generic;
-}
+// function getAvatar(user){
+//     let generic = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y';
+//     if(user){
+//         return user.avatar;
+//     }
+//     return generic;
+// }
 
-function getName(user){
-    return `${user.firstName} ${user.lastName}`;
-}
+// function getName(user){
+//     return `${user.firstName} ${user.lastName}`;
+// }
 
-const element = <div>{ getGreeting(user) }</div>;
-const avatar = <img src={ getAvatar(user) } />;
-const div = (
-    <div>
-        <div>{ element }</div>
-        <div>{ avatar }</div>
-    </div>
-);
+// const element = <div>{ getGreeting(user) }</div>;
+// const avatar = <img src={ getAvatar(user) } />;
+// const div = (
+//     <div>
+//         <div>{ element }</div>
+//         <div>{ avatar }</div>
+//     </div>
+// );
+// const container = document.getElementById('root');
+
+// ReactDOM.render(div, container);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Card from './components/card';
+
 const container = document.getElementById('root');
+const element = <Card />;
 
-ReactDOM.render(div, container);
+ReactDOM.render(element, container);
