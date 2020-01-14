@@ -5,6 +5,37 @@ import circlesImg from '../img/circles.png'
 
 class Card extends React.Component {
     
+    constructor(props){
+        super(props);
+        this.state = {
+            image: exerciseImg,
+            date: new Date()
+        }
+    }
+
+    componentDidMount(){
+        setTimeout( () => {
+            this.setState({
+                image: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png'
+            });
+        }, 5000);
+
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    tick(){
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    componentWillMount(){
+        clearInterval(this.timerID);
+    }
+
     render(){
     /* background: url('../../img/circles.png') no-repeat, linear-gradient(to right, #A74CF2, #617BFB); */
         const props = this.props ;
@@ -21,11 +52,12 @@ class Card extends React.Component {
                 <div className="card-body">
                     <div className="row center">
                         <div className="col-6">
-                            <img src={img} className="float-right"/>
+                            <img src={this.state.image} className="float-right"/>
                         </div>
                         <div className="col-6 Fitness-Card-Info">
                             <h1>{title}</h1>
                             <p>{description}</p>
+                            <p>{this.state.date.toLocaleTimeString()}</p>
                         </div>
                     </div>
                 </div>
