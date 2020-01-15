@@ -1,11 +1,11 @@
 import React from 'react'
-import ReactDom from 'react-dom'
 import '../components/styles/welcome.css'
 
 function Welcome(props){
     let {
         title, description
     } = props;
+    
     return (
         <div className="container">
             <div className="Fitness-User-Info">
