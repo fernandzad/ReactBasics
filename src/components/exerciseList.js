@@ -1,13 +1,11 @@
 import React from 'react'
 import Card from './card'
 
-function ExerciseList(props){
-    return (
-        <div>
-            { 
-                props.data.map( (exercise) => {
-                    return (
-                        <div>
+const ExerciseList = ({data}) => (
+    <div>
+        { 
+            data.map( (exercise) => (
+                    <div key={exercise.id.toString()}>
                         <Card 
                             title = {exercise.title}
                             description = {exercise.description}
@@ -16,12 +14,11 @@ function ExerciseList(props){
                             rightColor = {exercise.rightColor}
                         />
                         <br />
-                        </div>
-                    )
-                })
-            }
-        </div>
-    );
-}
+                    </div>
+                )
+            )
+        }
+    </div>
+)
 
 export default ExerciseList

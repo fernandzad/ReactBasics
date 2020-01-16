@@ -5,21 +5,12 @@ import circlesImg from '../img/circles.png'
 
 class Card extends React.Component {
     
-    constructor(props){
-        super(props);
-        this.state = {
-            image: exerciseImg,
-            date: new Date()
-        }
+    state = {
+        image: exerciseImg,
+        date: new Date()
     }
 
     componentDidMount(){
-        // setTimeout( () => {
-        //     this.setState({
-        //         image: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-256.png'
-        //     });
-        // }, 5000);
-
         this.timerID = setInterval(
             () => this.tick(),
             1000
