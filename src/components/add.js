@@ -7,7 +7,7 @@ class Add extends React.Component{
     render(){
         return (
             <Link to="/exercise/new">
-                <img src={addImg} className="Fitness-Add"/>
+                <img alt="" src={addImg} className="Fitness-Add"/>
             </Link>
         );
     }
