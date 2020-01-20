@@ -2,28 +2,48 @@ import React from 'react'
 import ExerciseList from '../components/exerciseList'
 import Welcome from '../components/welcome'
 import Add from '../components/add'
+import Loader from '../components/loader'
+import InternalServerError from '../pages/500'
 
 class Exercises extends React.Component{
 
     state = {
-        data: []
+        data: [],
+        loading: true,
+        error: null
     };
 
     async componentDidMount(){
         await this.fetchExercises();
+        
     }
 
     fetchExercises = async () => {
-        let response = await fetch('http://localhost:8000/api/exercises');
-        let data = await response.json();
+        try {
+            let response = await fetch('http://localhost:8000/api/exercises');
+            let data = await response.json();
+            //This fragment of code only shows that the component Loader works fine
+            await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
-        console.log(data);
-        this.setState({
-            data
-        });
+            this.setState({
+                data,
+                loading: false
+            }); 
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error
+            }); 
+            
+        }
+        
     }
 
     render(){
+        if(this.state.loading)
+            return <Loader />
+        if(this.state.error)
+            return <InternalServerError />
         return (
             <div>
                 <div>

@@ -6,7 +6,7 @@ class ExerciseForm extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        
     }
 
     render(){
@@ -17,6 +17,7 @@ class ExerciseForm extends React.Component{
                 <div className="container">
                     <form 
                         onSubmit={this.handleSubmit}>
+                        
                         <div className="form-group">
                             <input type="text"
                                     className="form-control"
@@ -64,6 +65,7 @@ class ExerciseForm extends React.Component{
                                 />
                             </div>
                         </div>
+                        <br />
                         <div className="form-group">
                             <button type="submit"
                                     className="btn btn-primary" 
