@@ -26,7 +26,7 @@ class ExerciseNew extends React.Component{
 
     render(){
         return (            
-            <div>
+            <React.Fragment>
                 <Title title="Nuevo Ejercicio" 
                         description="Ingresa los valores para agregar un nuevo ejercicio"/>
                 <div className="ExerciseNew_Form_Center ExerciseNew_Lateral_Spaces row">
@@ -42,7 +42,7 @@ class ExerciseNew extends React.Component{
                         />
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
             
                 
         );

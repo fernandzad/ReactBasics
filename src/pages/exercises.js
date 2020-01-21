@@ -45,7 +45,7 @@ class Exercises extends React.Component{
         if(this.state.error)
             return <InternalServerError error={this.state.error.toString()}/>
         return (
-            <div>
+            <React.Fragment>
                 <div>
                     <Title title="Hello Ad!"
                         description="Let's workout to get some gains!"/>
@@ -57,7 +57,7 @@ class Exercises extends React.Component{
                 <div>
                     <Add />
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
