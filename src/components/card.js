@@ -37,7 +37,7 @@ class Card extends React.Component {
             <div className="card mx-auto Fitness-Card"
                 style={{
                     backgroundImage: `url(${circlesImg}), 
-                    linear-gradient(to right, ${leftColor || '#56CCF2'}, 
+                    linear-gradient(to right, ${leftColor || '#EFD'}, 
                     ${rightColor || '#2F80ED'})`
                 }}
             >
