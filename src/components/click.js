@@ -17,38 +17,4 @@ const Click = () => {
     );
 }
 
-// class Click extends React.Component{
-
-//     state = {
-//         counter: 0
-//     }
-
-//     handleClick = (e) => {
-//         e.preventDefault();
-//         this.setState({
-//             counter: this.state.counter + 1
-//         });
-//     }
-
-//     render(){
-//         return (
-//             <div className="container">
-//                 <div className="form-check">
-//                     <label className="form-check-label" 
-//                             htmlFor="exampleCheck1"
-//                         >Check me out </label>
-//                         <br/>
-//                         <label className="form-check-label" 
-//                                 htmlFor="exampleCheck1"
-//                             >{this.state.counter}</label>
-//                 </div>
-//                 <button type="submit" 
-//                         className="btn btn-primary"
-//                         onClick={this.handleClick}
-//                     >Click me!</button>
-//             </div>
-//         );
-//     }
-// }
-
 export default Click;
