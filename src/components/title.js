@@ -1,7 +1,7 @@
 import React from 'react'
 import '../components/styles/welcome.css'
 
-const Welcome = ({title, description}) => (
+const Title = ({title, description}) => (
     <div className="container">
         <div className="Fitness-User-Info">
             <h1>{title}</h1>
@@ -10,4 +10,4 @@ const Welcome = ({title, description}) => (
     </div>
 )
 
-export default Welcome;
+export default Title;

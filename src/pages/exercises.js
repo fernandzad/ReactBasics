@@ -1,6 +1,6 @@
 import React from 'react'
 import ExerciseList from '../components/exerciseList'
-import Welcome from '../components/welcome'
+import Title from '../components/title'
 import Add from '../components/add'
 import Loader from '../components/loader'
 import InternalServerError from '../pages/500'
@@ -23,7 +23,7 @@ class Exercises extends React.Component{
             let response = await fetch('http://localhost:8000/api/exercises');
             let data = await response.json();
             //This fragment of code only shows that the component Loader works fine
-            await new Promise((resolve, reject) => setTimeout(resolve, 2000));
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000));
 
             this.setState({
                 data,
@@ -43,11 +43,11 @@ class Exercises extends React.Component{
         if(this.state.loading)
             return <Loader />
         if(this.state.error)
-            return <InternalServerError />
+            return <InternalServerError error={this.state.error.toString()}/>
         return (
             <div>
                 <div>
-                    <Welcome title="Hello Ad!"
+                    <Title title="Hello Ad!"
                         description="Let's workout to get some gains!"/>
                 </div>
                 <div>

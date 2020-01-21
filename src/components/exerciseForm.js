@@ -17,7 +17,7 @@ class ExerciseForm extends React.Component{
                 <div className="container">
                     <form 
                         onSubmit={this.handleSubmit}>
-                        
+
                         <div className="form-group">
                             <input type="text"
                                     className="form-control"
@@ -70,7 +70,7 @@ class ExerciseForm extends React.Component{
                             <button type="submit"
                                     className="btn btn-primary" 
                             >
-                                Submit
+                                Save
                             </button>
                         </div>
                         
