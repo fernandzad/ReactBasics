@@ -1,34 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InternalServerError from './500'
 import ExerciseNew from './exerciseNew'
 
-class ExerciseNewContainer extends React.Component{
-    
-    state = {
-        form: {
-            title: '',
-            description: '',
-            img: '',
-            leftColor: '',
-            rightColor: '',
-        },
-        loading: false,
-        error: null
-    }
+const ExerciseNewContainer = (props) => {
+    const [ form, formState ] = useState({});
+    const [ loading, loadingState ] = useState(false);
+    const [ error, errorState ] = useState(null);
 
-    handleChange = (e) => {
-        this.setState({
-            form:{
-                ...this.state.form,
-                [e.target.name]: e.target.value
-            }
+    const handleChange = (e) => {
+        formState({
+            ...form,
+            [e.target.name]: e.target.value
         });
     }
 
-    handleSubmit = async (e) => {
-        this.setState({
-            loading: true
-        });
+    const handleSubmit = async (e) => {
+        loadingState(true);
+
         e.preventDefault();
         try {
             let config = {
@@ -37,34 +25,27 @@ class ExerciseNewContainer extends React.Component{
                     'Accept': 'application/json',
                     'Content-type': 'application/json',
                 },
-                body: JSON.stringify(this.state.form)
+                body: JSON.stringify(form)
             }
             let response = await fetch('http://localhost:8000/api/exercises', config);
-            let json = await response.json();
+            //let json = await response.json();
 
-            this.setState({
-                loading: false
-            });
+            loadingState(false);
             
             //Gracias a React Router
-            this.props.history.push('/exercise');
+            props.history.push('/exercise');
 
         } catch (error) {
-            this.setState({
-                loading: false,
-                error
-            });
-
+            loadingState(false);
+            errorState(error);
         }
     }
 
-    render(){
-        if(this.state.error)
-            return <InternalServerError error={this.state.error.toString()}/>
-        return <ExerciseNew onChange={this.handleChange} 
-                            onSubmit={this.handleSubmit}
-                            form={this.state.form}/>;
-    }
+    if(error)
+        return <InternalServerError error={error.toString()}/>
+    return <ExerciseNew onChange={handleChange} 
+                        onSubmit={handleSubmit}
+                        form={form}/>;
 }
 
 export default ExerciseNewContainer

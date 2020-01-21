@@ -8,8 +8,8 @@ import Click from './click'
 const App = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/exercise" component={Exercises}/>
-            <Route exact path="/exercise/new" component={ExerciseNew}/>
+            <Route exact path="/exercise" component={ExercisesContainer}/>
+            <Route exact path="/exercise/new" component={ExerciseNewContainer}/>
             <Route exact path="/exercise/click" component={Click}/>
             <Route component={NotFound} />
         </Switch>
