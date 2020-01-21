@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './card'
 
 const ExerciseList = ({data}) => (
-    <div>
+    <React.Fragment>
         { 
             data.map( (exercise) => (
                     <div key={exercise.id.toString()}>
@@ -18,7 +18,7 @@ const ExerciseList = ({data}) => (
                 )
             )
         }
-    </div>
+    </React.Fragment>
 )
 
 export default ExerciseList

@@ -64,7 +64,7 @@ class ExerciseNew extends React.Component{
         if(this.state.error)
             return <InternalServerError error={this.state.error.toString()}/>
         return (            
-            <div>
+            <React.Fragment>
                 <Title title="Nuevo Ejercicio" 
                         description="Ingresa los valores para agregar un nuevo ejercicio"/>
                 <div className="ExerciseNew_Lateral_Spaces row">
@@ -81,7 +81,7 @@ class ExerciseNew extends React.Component{
                         />
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
             
                 
         );
