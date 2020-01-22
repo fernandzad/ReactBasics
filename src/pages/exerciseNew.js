@@ -6,8 +6,8 @@ import Title from '../components/title'
 const ExerciseNew = ({form, onSubmit, onChange}) => {
     return (
         <React.Fragment>
-            <Title title="Nuevo Ejercicio" 
-                    description="Ingresa los valores para agregar un nuevo ejercicio"/>
+            <Title title="Crear Nuevo" 
+                    description="Ingresa los valores del nuevo ejercicio"/>
             <div className="ExerciseNew_Lateral_Spaces row">
                 <div className="col-sm ExerciseNew_Card_Space">
                     <Card 

@@ -1,79 +1,74 @@
 import React from 'react'
 
-class ExerciseForm extends React.Component{
+const ExerciseForm = (props) => {
+    const {onChange, onSubmit, form} = props;
 
-    state = {}
+    return (
+        <React.Fragment>
+            <div className="container">
+                <form 
+                    onSubmit={onSubmit}>
 
-    render(){
-        const {onChange, onSubmit, form} = this.props;
-
-        return (
-            <React.Fragment>
-                <div className="container">
-                    <form 
-                        onSubmit={onSubmit}>
-
-                        <div className="form-group">
-                            <input type="text"
-                                    className="form-control"
-                                    placeholder="title"
-                                    name="title"
-                                    onChange={onChange}
-                                    value={form.title}
-                                    />
-                        </div>
-                        <div className="form-group">
-                            <input type="text"
-                                    className="form-control"
-                                    placeholder="description"
-                                    name="description"
-                                    onChange={onChange}
-                                    value={form.description}
-                                    />
-                        </div>
-                        <div className="form-group">
-                            <input type="text"
-                                    className="form-control"
-                                    placeholder="img"
-                                    name="img"
-                                    onChange={onChange}
-                                    value={form.img}
-                                    />
-                        </div>
-                        <div className="form-row">
-                            <div className="col">
-                                <input type="text"
-                                    className="form-control"
-                                    placeholder="leftColor"
-                                    name="leftColor"
-                                    onChange={onChange}
-                                    value={form.leftColor}
+                    <div className="form-group">
+                        <input type="text"
+                                className="form-control"
+                                placeholder="title"
+                                name="title"
+                                onChange={onChange}
+                                value={form.title}
                                 />
-                            </div>
-                            <div className="col">
-                                <input type="text"
-                                    className="form-control"
-                                    placeholder="rightColor"
-                                    name="rightColor"
-                                    onChange={onChange}
-                                    value={form.rightColor}
+                    </div>
+                    <div className="form-group">
+                        <input type="text"
+                                className="form-control"
+                                placeholder="description"
+                                name="description"
+                                onChange={onChange}
+                                value={form.description}
                                 />
-                            </div>
+                    </div>
+                    <div className="form-group">
+                        <input type="text"
+                                className="form-control"
+                                placeholder="img"
+                                name="img"
+                                onChange={onChange}
+                                value={form.img}
+                                />
+                    </div>
+                    <div className="form-row">
+                        <div className="col">
+                            <input type="text"
+                                className="form-control"
+                                placeholder="leftColor"
+                                name="leftColor"
+                                onChange={onChange}
+                                value={form.leftColor}
+                            />
                         </div>
-                        <br />
-                        <div className="form-group">
-                            <button type="submit"
-                                    className="btn btn-primary" 
-                            >
-                                Save
-                            </button>
+                        <div className="col">
+                            <input type="text"
+                                className="form-control"
+                                placeholder="rightColor"
+                                name="rightColor"
+                                onChange={onChange}
+                                value={form.rightColor}
+                            />
                         </div>
-                        
-                    </form>
-                </div>
-            </React.Fragment>
-        );
-    }
+                    </div>
+                    <br />
+                    <div className="form-group">
+                        <button type="submit"
+                                className="btn btn-primary" 
+                        >
+                            Save
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </React.Fragment>
+    );
 }
 
 export default ExerciseForm

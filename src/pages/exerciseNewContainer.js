@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import InternalServerError from './500'
 import ExerciseNew from './exerciseNew'
+import url from '../config'
 
 const ExerciseNewContainer = (props) => {
     const [ form, formState ] = useState({});
@@ -27,7 +28,7 @@ const ExerciseNewContainer = (props) => {
                 },
                 body: JSON.stringify(form)
             }
-            let response = await fetch('http://localhost:8000/api/exercises', config);
+            let response = await fetch(`${url}/exercises`, config);
             //let json = await response.json();
 
             loadingState(false);
